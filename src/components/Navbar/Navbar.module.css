@@ -18,6 +18,7 @@
 .links_list {
     display: flex;
     margin-right: 1rem;
+    list-style: none;
 }
 
 
