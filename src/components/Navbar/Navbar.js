@@ -8,6 +8,13 @@ const Navbar = () => {
   const { user } = useAuthValue();
   const { logout } = useAuthentication();
 
+  const signOut = () => {
+    const confirm = window.confirm('Deseja sair?')
+    if (confirm) {
+      logout();
+    }
+  }
+
   return (
     <nav className={styles.navbar}>
       <NavLink to="/" className={styles.brand}>Mini <span>Blog</span></NavLink>
@@ -61,7 +68,7 @@ const Navbar = () => {
         {user && (
           <>
             <li>
-              <button onClick={logout}>Sair</button>
+              <button onClick={signOut}>Sair</button>
             </li>
           </>
         )}
