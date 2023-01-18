@@ -5,6 +5,8 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import Login from './pages/Login/Login';
+import CreatePost from './pages/CreatePost/CreatePost';
+import Dashboard from './pages/Dashboard/Dashboard';
 import Register from './pages/Register/Register';
 import { AuthProvider } from './context/AuthContext';
 import { onAuthStateChanged } from 'firebase/auth';
@@ -41,6 +43,8 @@ function App() {
               <Route path='/about' element={<About />} />
               <Route path='/login' element={<Login />} />
               <Route path='/register' element={<Register />} />
+              <Route path='/posts/create' element={<CreatePost />} />
+              <Route path='/dashboard' element={<Dashboard />} />
             </Routes>
           </div>
           <Footer />
