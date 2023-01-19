@@ -12,6 +12,7 @@ import { AuthProvider } from './context/AuthContext';
 import { onAuthStateChanged } from 'firebase/auth';
 import { useState, useEffect } from 'react';
 import { useAuthentication } from './hooks/useAuthentication';
+import Search from './pages/Search/Search';
 
 function App() {
 
@@ -45,6 +46,7 @@ function App() {
               <Route path='/register' element={!user ? <Register /> : <Navigate to="/" />} />
               <Route path='/posts/create' element={user ? <CreatePost /> : <Navigate to="/login" />} />
               <Route path='/dashboard' element={user ? <Dashboard /> : <Navigate to="/login" />} />
+              <Route path='/search' element={<Search />} />
             </Routes>
           </div>
           <Footer />
